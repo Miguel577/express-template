@@ -27,8 +27,8 @@ router.get('/signup', function(req, res, next) {
 //////////////////////////////// PRIVATE ROUTES ////////////////////////////////
 // Only logged in users can see these routes
 
-router.get('/protected', function(req, res, next) {
-  res.render('protectedRoute');
+router.get('/login', function(req, res, next) {
+  res.render('login');
 });
 
 
