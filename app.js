@@ -10,7 +10,7 @@ var LocalStrategy = require('passport-local');
 var mongoose = require('mongoose');
 var connect = process.env.MONGODB_URI;
 
-var REQUIRED_ENV = "SECRET".split(" ");
+var REQUIRED_ENV = "MONGODB_URI SECRET".split(" ");
 
 REQUIRED_ENV.forEach(function(el) {
   if (!process.env[el]){
@@ -43,7 +43,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Passport  Removed functionality
+// Passport  
 app.use(session({
   secret: process.env.SECRET,
   store: new MongoStore({ mongooseConnection: mongoose.connection })
