@@ -43,7 +43,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Passport  
+// Passport
 app.use(session({
   secret: process.env.SECRET,
   store: new MongoStore({ mongooseConnection: mongoose.connection })
@@ -118,7 +118,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-var port = process.env.PORT || 3000;
+var port = 3000; // Removed process.env.PORT
 app.listen(port);
 console.log('Express started. Listening on port %s', port);
 
