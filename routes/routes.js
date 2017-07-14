@@ -20,12 +20,17 @@ router.use(function(req, res, next){
   }
 });
 
+router.get('/signup', function(req, res, next) {
+  res.render('signup');
+});
+
 //////////////////////////////// PRIVATE ROUTES ////////////////////////////////
 // Only logged in users can see these routes
 
 router.get('/protected', function(req, res, next) {
   res.render('protectedRoute');
 });
+
 
 ///////////////////////////// END OF PRIVATE ROUTES /////////////////////////////
 
