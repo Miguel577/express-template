@@ -118,7 +118,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-var port = 3000; // Removed process.env.PORT
+var port = 3001; // Removed process.env.PORT
 app.listen(port);
 console.log('Express started. Listening on port %s', port);
 
