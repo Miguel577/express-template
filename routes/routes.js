@@ -12,17 +12,22 @@ router.get('/', function(req, res, next) {
 
 ///////////////////////////// END OF PUBLIC ROUTES /////////////////////////////
 
-router.use(function(req, res, next){
-  if (!req.user) {
-    res.redirect('/login');
-  } else {
-    return next();
-  }
-});
+// router.use(function(req, res, next){
+//   if (!req.user) {
+//     res.redirect('/login');
+//   } else {
+//     return next();
+//   }
+// });
 
 router.get('/signup', function(req, res, next) {
   res.render('signup');
 });
+
+router.get('/travel', function(req, res, next) {
+  res.render('travel');
+});
+
 
 //////////////////////////////// PRIVATE ROUTES ////////////////////////////////
 // Only logged in users can see these routes
