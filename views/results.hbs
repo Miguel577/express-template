@@ -1,0 +1,144 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+var destinations= [];
+$(document).ready(function(){
+
+var displayedOnPage;
+$("#mydiv").on('click','.goHere' , function(){
+  destinations.push($(this).siblings("h5.location").text());
+  generate($(this).siblings("h5.location").text());
+})
+function generate(location){
+  destinations.forEach(function(dest){
+    $("#randomDiv").append(dest);
+  })
+  function generator(array){
+    var string = "";
+    array.forEach(function(item){
+      var distanceInMiles = Math.round((item.distance*0.000621)*100)/100;
+      var  itemString = `<div id="${item.name}"><h3 class = "name">${item.name} </h3>
+      <h5 class = "location"><i>${item.location.address1} ${item.location.city} ${item.location.state}</i></h5> ${item.rating} stars            |
+      ${item.price}   |   ${distanceInMiles} miles </br> <br>
+       <span><a href="${item.url}" class="btn btn-warning">Yelp</a></span>
+       <button type="button" class="goHere btn btn-primary">Add</button></div> </br>`
+    string =  string + itemString;
+})
+return string;
+  }
+  $.ajax({
+    url:"http://localhost:3001/results",
+    data:{
+      location:location
+    },
+    success:function(result){
+      displayedOnPage = result;
+var foodString = generator(result.foods);
+var drinksString = generator(result.drinks);
+var artsString = generator(result.arts);
+var attractionsString = generator(result.attractions);
+var nightlifeString = generator(result.nightlife);
+var outdoorsString = generator(result.outdoors);
+      $("#mydiv").html(`
+        <div class = "kamran">
+        <center> <p><b><h1>Choose your waypoints</h1></b></p> </center>
+        <div class="paths-container">
+          <div class="row upper">
+            <!--Food Options well-->
+            <div class="col-xs-4">
+              <div class="foodOptions well">
+                <h2 class="center"><u>Food</u></h2>
+                <ul>
+                ${foodString}
+                  </ul>
+              </div>
+            </div>
+            <!--Drinks Options well-->
+            <div class="col-xs-4">
+              <div class="drinksOptions well">
+                <h2 class = "center"><u>Drinks</u></h2>
+                <ul>
+                  ${drinksString}
+                  </ul>
+              </div>
+            </div>
+            <!--Attractions Options well-->
+            <div class="col-xs-4">
+              <div class="attractionsOptions well">
+                <h2 class = "center"><u>Attractions</u></h2>
+                <ul>
+                  ${attractionsString}
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4">
+              <!--Fine Arts Options well-->
+              <div class="artsOptions well">
+                <h2 class = "center"><u>Fine Arts</u></h2>
+                <ul>
+                  ${artsString}
+                  </ul>
+              </div>
+            </div>
+            <!--Nightlife Options well-->
+            <div class="col-xs-4">
+              <div class=" nightlifeOptions well">
+                <h2 class = "center"><u>Nightlife</u></h2>
+                <ul>
+                  ${nightlifeString}
+                  </ul>
+              </div>
+            </div>
+            <!--Outdoors Options well-->
+            <div class="col-xs-4">
+              <div class=" outdoorsOptions well">
+                <h2 class = "center"><u>Recreational Activities</u></h2>
+                <ul>
+                  ${outdoorsString}
+                  </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class ="butTOn" id="randomDiv"></div>
+        <center> <button type="button" class="routeButton btn btn-primary" style="width:360px; border-radius:3px; padding:100px, 200px; font-size: 25px; margin-bottom: 30px;">Find your way</button> </center>
+        </div>`)
+
+    }
+
+  })
+}
+
+generate("");
+
+$("#mydiv").on('click', '.routeButton', function(){
+  console.log(destinations);
+  $.ajax({
+    url:"http://localhost:3001/map",
+    method:"POST",
+    data: {
+      destinations: JSON.stringify(destinations)
+    },
+    success:function(result){
+      console.log("SUCCESS", result);
+      window.location.replace("http://localhost:3001/map")
+
+    },
+    error: function(err){
+      console.log("Error", err)
+    }
+  })
+
+})
+
+
+})
+</script>
+
+<div id = "mydiv">
+
+
+
+
+</div>

@@ -1,0 +1,146 @@
+<center>
+<p><b><h1>Plan your journey</h1></b></p>
+<style>
+.well {
+  background-color: rgba(255,255,255, 0.9);
+ }
+</style>
+<form class="well" method="POST" action="/search">
+      <!-- YOUR CODE HERE -->
+      <label><p><b><h2>Start Location:</h2></b></p>    </label> <input type="text" name="location" style="margin-left: 20px">
+    <!-- Prefernces -->
+    <div class="row">
+        <!--  Food-->
+      <div class="foodDiv col-xs-6"> <!-- make button grey and if succeed turn blue -->
+        <p class="text"><b><h3>Food</h3></b></p>
+        <div class="radiobtn">
+          <div data-toggle="buttons">
+        <label class="btn btn-primary" style="font-size:18px;">
+          <input type="radio" name="food" value="indian" autocomplete="off" checked> Indian
+        </label>
+        <label class="btn btn-primary" style="font-size:18px;">
+          <input type="radio" name="food" value="mexican" autocomplete="off">Mexican
+        </label>
+        <label class="btn btn-primary" style="font-size:18px;">
+          <input type="radio" name="food" value="italian" autocomplete="off">Italian
+        </label>
+        <label class="btn btn-primary" style="font-size:18px;">
+          <input type="radio" name="food" value="Chinese" autocomplete="off">Chinese
+        </label>
+        </div>
+        </div>
+      </div>
+<!-- Drinks   -->
+<div class="drinksDiv col-xs-6">
+  <p><b><h3>Drinks</h3></b></p>
+  <div class="radiobtn">
+    <div data-toggle="buttons">
+  <label class="btn btn-primary" style="font-size:18px;">
+    <input type="radio" name="drinks" value="coffee/tea" autocomplete="off">Coffee and Tea
+  </label>
+  <label class="btn btn-primary" style="font-size:18px;">
+    <input type="radio" name="drinks" value="juice/smoothies" autocomplete="off">Juice and Smoothies
+  </label>
+  <label class="btn btn-primary" style="font-size:18px;">
+    <input type="radio" name="drinks" value="beer/wine" autocomplete="off">Beer and Wine
+  </label>
+  <label class="btn btn-primary" style="font-size:18px;">
+    <input type="radio" name="drinks" value="cocktails" autocomplete="off">Cocktails
+  </label>
+  </div>
+  </div>
+</div>
+    </div> <br> <br>
+    <br>
+    <!-- End of First Row -->
+<div class="row">
+<!-- Attractions-->
+  <div class="attractionsDiv col-xs-6">
+    <p><b><h3>Attractions</h3></b></p>
+    <div class="radiobtn">
+      <div data-toggle="buttons">
+    <label class="btn btn-primary" style="font-size:18px;">
+      <input type="radio" name="attractions" value="landmarks" autocomplete="off">Landmarks
+    </label>
+    <label class="btn btn-primary" style="font-size:18px;">
+      <input type="radio" name="attractions" value="parks" autocomplete="off">Parks
+    </label>
+    <label class="btn btn-primary" style="font-size:18px;">
+      <input type="radio" name="attractions" value="historicalSites" autocomplete="off">Historical Sites
+    </label>
+    <label class="btn btn-primary" style="font-size:18px;">
+      <input type="radio" name="attractions" value="carnival" autocomplete="off">Carnival
+    </label>
+    </div>
+    </div>
+  </div>
+  <!--  Fine Arts-->
+  <div class="artsDiv col-xs-6">
+    <p><b><h3>Fine Arts</h3></b></p>
+    <div class="radiobtn">
+      <div data-toggle="buttons">
+    <label class="btn btn-primary" style="font-size:18px;">
+      <input type="radio" name="arts" value="museums" autocomplete="off">Museums
+    </label>
+    <label class="btn btn-primary" style="font-size:18px;">
+      <input type="radio" name="arts" value="theater" autocomplete="off">Theater
+    </label>
+    <label class="btn btn-primary" style="font-size:18px;">
+      <input type="radio" name="arts" value="movies" autocomplete="off">Movies
+    </label>
+    <label class="btn btn-primary" style="font-size:18px;">
+      <input type="radio" name="arts" value="music concerts" autocomplete="off">Music Concerts
+    </label>
+    </div>
+    </div>
+  </div>
+</div> <br> <br> <br>
+<!--End of 2nd Row-->
+<div class="row">
+  <!--Nightlife-->
+  <div class="nightlifeDiv col-xs-6">
+    <p><b><h3>Nightlife</h3></b></p>
+    <div class="radiobtn">
+    <div data-toggle="buttons">
+  <label class="btn btn-primary" style="font-size:18px;">
+    <input type="radio" name="nightlife" value="bars" autocomplete="off">Bars
+  </label>
+  <label class="btn btn-primary" style="font-size:18px;">
+    <input type="radio" name="nightlife" value="nightclubs" autocomplete="off">Nightclubs
+  </label>
+  <label class="btn btn-primary" style="font-size:18px;">
+    <input type="radio" name="nightlife" value="pubs" autocomplete="off">Pubs
+  </label>
+  <label class="btn btn-primary" style="font-size:18px;">
+    <input type="radio" name="nightlife" value="rooftops" autocomplete="off">Rooftops
+  </label>
+  </div>
+  </div>
+  </div>
+    <!--    Outdoors-->
+    <div class="outdoorsDiv col-xs-6">
+      <p><b><h3>Recreational Activities</h3></b></p>
+      <div class="radiobtn">
+        <div data-toggle="buttons">
+      <label class="btn btn-primary" style="font-size:18px;">
+        <input type="radio" name="outdoors" value="biking" autocomplete="off">Biking
+      </label>
+      <label class="btn btn-primary" style="font-size:18px;">
+        <input type="radio" name="outdoors" value="sports" autocomplete="off">Sports
+      </label>
+      <label class="btn btn-primary" style="font-size:18px;">
+        <input type="radio" name="outdoors" value="Parks" autocomplete="off"> Parks
+      </label>
+      <label class="btn btn-primary" style="font-size:18px;">
+        <input type="radio" name="outdoors" value="Gym" autocomplete="off"> Gym
+      </label>
+      </div>
+    </div> <br> <br>
+    </div>
+</div>
+    <!--End of Interests-->
+    <!--Location-->
+      <!-- <label><p><b><h3>Location</h3></b></p></label> <input type="text" name="location"/> <br> -->
+      <input class="btn btn-warning" type="submit" value="Plan" style="border-radius: 5px; padding: 0.5px; width:170px; height:40px; font-weight:medium; font-size:20px"/>
+    </center>
+</form>

@@ -3,3 +3,56 @@ body {
   padding-top: 6.5rem;
   font: 14px "Open Sans", Helvetica, Arial, sans-serif;
 }
+h5{
+  font:Arial;
+  font-weight:bold;
+  font:14px;
+}
+.center {
+  text-align: center;
+}
+.well {
+  font:Arial;
+  font-weight:bold;
+  border-radius: 20px;
+}
+
+.foodOptions {
+  overflow: scroll;
+  width:380px;
+  height:400px;
+}
+
+.drinksOptions {
+  overflow: scroll;
+  width:380px;
+  height:400px;
+}
+
+.attractionsOptions {
+  overflow: scroll;
+  width:380px;
+  height:400px;
+}
+
+.artsOptions {
+  overflow: scroll;
+  width:380px;
+  height:400px;
+}
+
+.nightlifeOptions {
+  overflow: scroll;
+  width:380px;
+  height:400px;
+}
+
+.outdoorsOptions {
+  overflow: scroll;
+  width:380px;
+  height:400px;
+}
+
+.peter {
+  justify-content: center;
+}
